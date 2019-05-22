@@ -1,125 +1,133 @@
 <html>
-    <title> Audience Network Mobile Web Sample</title>
+
     <head>
-        <!-- Native Styles -->
-        <style>
-            .thirdPartyRoot {
-                background-color: white;
-                color: #444;
-                border: 1px solid #ccc;
-                border-left: 0;
-                border-right: 0;
-                font-family: sans-serif;
-                font-size: 14px;
-                line-height: 16px;
-                width: 320px;
-                text-align: left;
-                position: relative;
-            }
-        .thirdPartyMediaClass {
-            width: 320px;
-            height: 168px;
-            margin: 12px 0;
-        }
-        .thirdPartySubtitleClass {
-            font-size: 18px;
-            -webkit-line-clamp: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            height: 16px;
-            -webkit-box-orient: vertical;
-        }
-        .thirdPartyTitleClass {
-            padding-right: 12px;
-            line-height: 18px;
-            -webkit-line-clamp: 2;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            height: 36px;
-            -webkit-box-orient: vertical;
-        }
-        .thirdPartyCallToActionClass {
-            background-color: #416BC4;
-            color: white;
-            border-radius: 4px;
-            padding: 6px 20px;
-            float: right;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 11px;
-        }
-        .fbDefaultNativeAdWrapper {
-            font-size: 12px;
-            line-height: 14px;
-            margin: 12px 0;
-            height: 36px;
-            vertical-align: top;
-        }
+       <style>
+           .adnwRoot{
+               background:white;
+               font-family:'Segoe UI', -apple-system, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+               font-size:15px;
+               font-weight:600;
+               max-height:600px;
+               line-height:16px;
+               text-align:left;
+               width:160px;
+               position:relative;
+               overflow:hidden;
+               text-align:center;
+               box-sizing:border-box;
+               border:1px solid #EAEAEA;
+               border-right:none;
+           }
+           .adnwRoot div.fbAdLink{
+               cursor:pointer;
+               text-decoration:none;
+           }
+           .adnwBody{
+               color:#606771;
+               font-weight:normal;
+               overflow:hidden;
+               white-space:normal;
+               font-size:16px;
+               line-height:20px;
+               text-align:left;
+               max-height:100px;
+               margin-top:6px;
+               margin-bottom:6px;
+           }
+           .adnwHeader{
+               display:block;
+               color:#0078D7;
+               text-align:left;
+           }
+           .adnwHeaderTitle{
+               font-size:15px;
+               line-height:20px;
+               font-weight:600;
+               color:#0078D7;
+               max-height:40px;
+           }
+           .adnwRoot .adnwCallToActionWrapper{
+               margin-bottom:5px;
+               margin-top:15px;
+               text-align:left;
+           }
+           .adnwCallToAction{
+               background:#0078D7;
+               font-weight:normal;
+               text-align:center;
+               text-decoration:none;
+               border-radius:3px;
+               padding:10px 10px;
+               white-space:nowrap;
+               font-size:15px;
+               text-transform:none;
+               color:white;
+               display:inline-block;
+           }
+           .adnwBrand{
+               text-align:left;
+               display:flex;
+               flex-direction:row;
+               margin-bottom:8px;
+               align-items:center;
+           }
+           .adnwBrand .fbAdIcon{
+               display:block;
+               flex-shrink:0;
+               width:35px;
+               height:35px;
+               border-radius:50%;
+               overflow:hidden;
+               margin-right:5px;
+           }
+           .fbAdSubtitle{
+               color:#333333;
+               font-size:15px;
+               line-height:18px;
+               font-weight:600;
+               max-height:36px;
+               margin-top:10px;
+               margin-bottom:10px;
+           }
+           .adnwAdWrapper{
+               display:flex;
+               flex-direction:column;
+           }
+           .adnwAdMedia{
+               height:83px;
+               width:159px;
+           }
+           .adnwMain{
+               padding:10px;
+           }
         </style>
+
     </head>
-    <body>
-        <div style="display:none !important; position: relative;">
-            <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-            <script type="text/javascript">
-                window.ADNW = window.ADNW || {};
-                window.ADNW.v60 = window.ADNW.v60 || {};
-                window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-                window.ADNW.v60.slots.push({
-                                           rootElement: document.currentScript.parentElement,
-                                           placementid: '616851695460361_619978161814381',
-                                           format: 'native',
-                                           testmode: true,
-                                           onAdLoaded: function(rootElement) {
-                                           console.log('Audience Network [616851695460361_619978161814381] ad loaded');
-                                           rootElement.style.display = 'block';
-                                           },
-                                           onAdError: function(errorCode, errorMessage) {
-                                           console.log('Audience Network [616851695460361_619978161814381] error (' + errorCode + ') ' + errorMessage);
-                                           }
-                                           });
-                </script>
-            <div style="position: relative; display: inline-block;">
-                <div class="fbANRoot thirdPartyRoot">
-                    <div class="iaCarouselRoot fbAdLink">
-                        
-                        <div class="fbAdMedia thirdPartyMediaClass">
-                            <div class="fbAdMediaCenter"></div>
-                        </div>
-                        <div class="iaCarouselFooter">
-                            <div class="fbAdTitle thirdPartyTitleClass"></div>
-                            <div class="fbAdBody"></div>
-                            <div class="fbDefaultNativeAdWrapper">
-                                <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#" class="_6qhg"></a>
-                    <div class="_6qhh"></div>
-                </div>
-            </div>
-        </div>
-        <div style="display:none !important; position: relative;;">
-            <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-            <script type="text/javascript">
-                window.ADNW = window.ADNW || {};
-                window.ADNW.v60 = window.ADNW.v60 || {};
-                window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-                window.ADNW.v60.slots.push({
-                                           rootElement: document.currentScript.parentElement,
-                                           placementid: '616851695460361_620351341777063',
-                                           format: '300x250',
-                                           testmode: true,
-                                           onAdLoaded: function(rootElement) {
-                                           console.log('Audience Network [616851695460361_620351341777063] ad loaded');
-                                           rootElement.style.display = 'block';
-                                           },
-                                           onAdError: function(errorCode, errorMessage) {
-                                           console.log('Audience Network [616851695460361_620351341777063] error (' + errorCode + ') ' + errorMessage);
-                                           }
-                                           });
-                </script>
-        </div>
-    </body>
+
+<body>
+    <div style="display:none; position: relative;">
+      <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+      <script type="text/javascript">
+        window.ADNW = window.ADNW || {};
+        window.ADNW.v60 = window.ADNW.v60 || {};
+        window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+        window.ADNW.v60.slots.push({
+          rootElement: document.currentScript.parentElement,
+          placementid: '616851695460361_619978161814381',
+          format: 'native',
+          testmode: false,
+          onAdLoaded: function(element) {
+            console.log('Audience Network 616851695460361_619978161814381 ad loaded');
+            element.style.display = 'block';
+          },
+          onAdError: function(errorCode, errorMessage) {
+            console.log('Audience Network 616851695460361_619978161814381 error (' + errorCode + ') ' + errorMessage);
+            [PASSBACK_CODE]
+          }
+        });
+      </script>
+      <div class="adnwRoot fbANRoot"><div class="fbAdLink adnwAdWrapper"><div class="adnwAdMedia fbAdMedia"></div><div class="adnwMain"><div class="adnwBrand"><div class="fbAdIcon"></div><div class="fbAdSubtitle" data-auto-fit-text="true"></div></div><div class="adnwHeader"><div class="fbAdTitle adnwHeaderTitle" data-auto-fit-text="true"></div></div><div class="adnwBody fbAdBody" data-auto-fit-text="true"></div><div class="adnwCallToActionWrapper"><span class="adnwCallToAction fbAdCallToAction"></span></div></div></div></div>
+    </div>
+</body>
+
 </html>
