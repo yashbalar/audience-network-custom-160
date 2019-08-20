@@ -116,13 +116,13 @@
           placementid: '616851695460361_624077668071097',
           format: '300x250',
           testmode: false,
-          onAdLoaded: function(element) {
-            console.log('Audience Network 616851695460361_624077668071097 ad loaded');
-            element.style.display = 'block';
+          onAdLoaded: function(rootElement) {
+            console.log('Audience Network [1732616203709022_1732630363707606] ad loaded');
+            rootElement.style.display = 'block';
           },
           onAdError: function(errorCode, errorMessage) {
-            console.log('Audience Network 616851695460361_624077668071097 error (' + errorCode + ') ' + errorMessage);
-            [PASSBACK_CODE]
+            console.log('Audience Network [1732616203709022_1732630363707606] error (' + errorCode + ') ' + errorMessage);
+          
           }
         });
       </script>
